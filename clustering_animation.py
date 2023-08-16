@@ -1,3 +1,4 @@
+import sys
 import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib import animation
@@ -32,6 +33,6 @@ def clustering_animation(chains):
     ani.save(f'{chains}.gif', writer=writer)
 
 
-for chains in ["native", "convex_cluster"]:
+for chains in sys.argv[1:]:
     clustering_animation(chains)
     plt.show()
